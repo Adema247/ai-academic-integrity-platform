@@ -51,4 +51,16 @@ The following scenarios will be tested:
 
 5. API and Database Testing
 
-API endpoints will be tested using valid and invalid requests to verify
+API endpoints will be tested using valid and invalid requests to verify expected responses and error handling.
+
+Database operations will be checked to ensure data consistency and appropriate access controls.
+
+6. Performance Testing
+
+Response time and resource usage will be measured using representative text inputs. Performance results will be documented after implementation and testing.
+
+7. Reporting Results
+
+The evaluation report will include the dataset description, experimental setup, classification metrics, functional test results, known limitations, and possible improvements.
+
+No performance results will be reported until the corresponding experiments have been conducted.
