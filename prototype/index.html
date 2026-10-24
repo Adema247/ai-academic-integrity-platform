@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IntegrityLens — demo</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="logo">IntegrityLens <small>demo prototype · mock data · no backend</small></div>
+<nav id="tabs"><button data-t="upload" class="on">1 Upload</button><button data-t="batch">2 Batch results</button><button data-t="report">3 Student report</button><button data-t="release">4 Release &amp; contest</button></nav>
+<div class="role">Role: <select id="role"><option>Instructor</option><option>Student</option></select></div></header>
+<main>
+<section id="upload" class="tab on">
+ <h2>Course: Academic Writing · Reports batch #3</h2>
+ <div class="drop">Drop DOCX / PDF files or a ZIP here <button id="addf">Add sample files</button></div>
+ <table><thead><tr><th>File</th><th>Student</th><th>Detected language</th><th>Extracted</th><th>Status</th></tr></thead><tbody id="files"></tbody></table>
+ <p><button id="run" class="pri">Run analysis for all files</button> <span id="prog" class="note"></span></p>
+</section>
+<section id="batch" class="tab">
+ <h2>Batch results <small>— one report per student</small></h2>
+ <table><thead><tr><th>Student</th><th>Lang</th><th>AI-text estimate</th><th>References</th><th>Links</th><th>Figures</th><th>Calculations</th><th>Status</th><th></th></tr></thead><tbody id="rows"></tbody></table>
+ <p class="note">Estimates are decision support. Nothing is sent to students until the instructor releases it.</p>
+</section>
+<section id="report" class="tab">
+ <h2 id="rh"></h2>
+ <div class="grid"><div>
+  <div class="card"><h3>A. AI-text analysis <small>(click a highlighted fragment)</small></h3><div id="text" class="text"></div>
+   <div class="legend"><span class="hl l1"></span>low <span class="hl l2"></span>medium <span class="hl l3"></span>high</div></div>
+  <div class="card"><h3>B. Report checks</h3><div class="sub" id="sub"></div><div id="chk"></div></div>
+ </div><div>
+  <div class="card"><h3>Class probabilities</h3><div id="probs"></div><p class="note">Estimate with uncertainty. Hybrid human+AI text is a separate case.</p></div>
+  <div class="card"><h3>Why this fragment?</h3><div id="why" class="why">Select a highlighted fragment.</div></div>
+  <p><button class="pri" id="appr">Approve for release</button> <button onclick="window.print()">Export PDF</button></p>
+  <p class="note">Limitation notice: this report is an estimate and may contain errors. It is not proof of misconduct.</p>
+ </div></div>
+</section>
+<section id="release" class="tab">
+ <h2>Release &amp; contest</h2>
+ <div class="grid"><div class="card"><h3>Instructor: release reports to students</h3><table><tbody id="rel"></tbody></table>
+  <p><button class="pri" id="send">Release &amp; send selected</button></p><p class="note" id="sentn"></p></div>
+ <div class="card"><h3>Student: contest a result</h3><label>Report</label><select id="crep"></select>
+  <label>Your comment</label><textarea id="ctext" rows="4" placeholder="I wrote this myself, here is my draft history…"></textarea>
+  <button id="csend">Submit contest</button><ul id="clog"></ul></div></div>
+</section>
+</main>
+<script src="data.js"></script><script src="app.js"></script></body></html>
