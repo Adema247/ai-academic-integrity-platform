@@ -1,1 +1,61 @@
+PROJECT RISK REGISTER
 
+1. Purpose
+
+This document identifies the main risks that may affect the development and use of the AI-Based Platform for Academic Integrity Verification and Personal Contribution Assessment.
+
+2. Identified Risks
+
+R-1: Incorrect AI Text Classification
+
+Probability: Medium
+Impact: High
+Mitigation: Evaluate the model using a separate test set and report precision, recall, F1-score, and a confusion matrix.
+
+R-2: Insufficient or Imbalanced Dataset
+
+Probability: Medium
+Impact: High
+Mitigation: Use suitable labelled data, check class balance, and document dataset limitations.
+
+R-3: Incomplete Contribution Assessment
+
+Probability: High
+Impact: High
+Mitigation: Use multiple indicators, explain their limitations, and avoid treating activity data as a definitive measure of individual contribution.
+
+R-4: Limited Access to External Data
+
+Probability: Medium
+Impact: Medium
+Mitigation: Use authorized access, test integrations early, and handle unavailable data appropriately.
+
+R-5: Unauthorized Access to Personal or Academic Data
+
+Probability: Low to Medium
+Impact: High
+Mitigation: Implement access controls, obtain appropriate authorization, and store only the data necessary for system operation.
+
+R-6: Project Delays
+
+Probability: Medium
+Impact: High
+Mitigation: Prioritize core features, assign responsibilities clearly, and review progress regularly in YouTrack.
+
+R-7: Poor System Performance
+
+Probability: Medium
+Impact: Medium
+Mitigation: Measure response times during testing and optimize components when necessary.
+
+3. Risk Monitoring
+
+The team will review risks throughout development and update this register when new issues arise or existing risks change.
+
+4. Ethical Considerations
+
+AI classification results are estimates and may be incorrect. Contribution indicators may be incomplete or misleading. The platform will support human review and will not make automatic disciplinary decisions.
+
+5. Current Status
+
+This register describes potential risks and planned mitigation measures. The probability and impact of each risk will be reviewed as implementation and testing progress.
